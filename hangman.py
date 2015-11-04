@@ -1,3 +1,9 @@
+"""
+modified from the original idea on inventingwithpython.com
+added parsing of a web-page for a list of animals, as a proof of concept
+built in stages with prompting by Y10 pupils
+"""
+
 from html.parser import HTMLParser
 import urllib.request
 import random
@@ -70,10 +76,13 @@ class MyHtmlParser(HTMLParser):
         # print("Encountered a tag:", tag, "with attributes:", attrs)
         if tag == "a":
             # print(tag, "=>",  attrs)
-            if attrs[0][0] == "href" and attrs[0][1].startswith("/animals/"):
-                # print(attrs[1][1].lower())
-                if not attrs[1][1].startswith("Animals "):
-                    animals.append(attrs[1][1].lower())
+            if attrs[0][0] == "href" and \
+                    attrs[0][1].startswith("/animals/") and \
+                    not attrs[0][1].startswith("/animals/pictures/") and \
+                    len(attrs[0][1]) > 9 and \
+                    attrs[0][1][9:-1] not in ["scientific", "group", "location", "endangered", "favourites"]:
+                # print(attrs[0][1], attrs[1][1].lower())
+                animals.append(attrs[1][1].lower())
 
 animals = []
 parser = MyHtmlParser()
