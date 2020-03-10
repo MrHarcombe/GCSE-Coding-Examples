@@ -1,0 +1,27 @@
+to american_flag
+  window setscrunch :scrunch :scrunch pu setxy -600 -320 pd repeat 7 [ setcolor 'red filled 'red [ rectangle 50 1200 ] setcolor 'white fd 100 ] bk 400 setcolor 'darkblue filled 'darkblue [ rectangle 350 500 ] pu fd 19 rt 90 fd 26 lt 90 pd repeat 4 [ repeat 6 [ star 'white 30 pu rt 90 fd 85 lt 90 pd ] pu lt 90 fd 468 rt 90 fd 36 pd repeat 5 [ star 'white 30 pu rt 90 fd 85 lt 90 pd ] pu lt 90 fd 468 rt 90 fd 36 pd ] repeat 6 [ star 'white 30 pu rt 90 fd 85 lt 90 pd ] pu bk 607 lt 90 fd 531 rt 90 pd setcolor 'black rectangle 650 1200
+end
+
+to greek_flag :scrunch
+  window setscrunch :scrunch :scrunch pu setxy -450 -340 pd repeat 5 [ setcolor '#004C98 filled '#004C98 [ rectangle 75 1000 ] setcolor 'white fd 150 ] bk 450 setcolor '#004C98 filled '#004C98 [ rectangle 375 375 ] fd 150 setcolor 'white filled 'white [ rectangle 75 375 ] bk 150 rt 90 fd 150 lt 90 setcolor 'white filled 'white [ rectangle 375 75 ] lt 90 fd 150 rt 90 bk 300 setcolor 'black rectangle 675 1000
+end
+
+to iceland_flag :scrunch
+  window setscrunch :scrunch :scrunch pu setxy -450 -250 pd filled 'darkblue [ rectangle 540 720 ] fd 210 setcolor 'white filled 'white [ rectangle 120 720 ] setcolor 'darkblue bk 210 rt 90 fd 180 lt 90 setcolor 'white filled 'white [ rectangle 540 120 ] rt 90 fd 30 lt 90 setcolor 'red filled 'red [ rectangle 540 60 ] pu lt 90 fd 210 rt 90 fd 240 pd filled 'red [ rectangle 60 720 ] setcolor 'black bk 240 rectangle 540 720
+end
+
+to rectangle :height :width
+  repeat 2 [ fd :height rt 90 fd :width rt 90 ]
+end
+
+to star :colour :size
+  setcolor :colour filled :colour [ rt 18 repeat 5 [ fd :size rt 144 ] ] lt 18
+end
+
+to sudan_flag :scrunch
+  window setscrunch :scrunch :scrunch pu setxy -500 -300 pd setcolor 'black filled 'black [ rectangle 200 1000 ] fd 200 setcolor 'white fd 200 setcolor 'red filled 'red [ rectangle 200 1000 ] setcolor 'green bk 400 filled 'green [ triangle 600 45 425 ] setcolor 'black rectangle 600 1000
+end
+
+to triangle :side1 :angle :side2
+  fd :side1 rt 180 - :angle fd :side2 rt 180 - ( 180 - 2 * :angle ) fd :side2 rt 180 - :angle
+end
