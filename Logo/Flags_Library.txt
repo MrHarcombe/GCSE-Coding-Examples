@@ -123,3 +123,54 @@ to triangle :side1 :angle :side2
   fd :side2
   rt 180 - :angle
 end
+
+to union_jack
+  window
+  setscrunch :scrunch :scrunch
+  pu setxy -600 -300 pd
+  filled 'darkblue [ rectangle 600 1200 ]
+  setcolor 'white
+  lt arctan(600/1200) bk 60
+  filled 'white [ rectangle 120 sqrt(600*600 + 1200*1200) ]
+  fd 60 rt arctan(600/1200) fd 600 rt arctan(600/1200) bk 60
+  filled 'white [ rectangle 120 sqrt(600*600 + 1200*1200) ]
+  pu fd 60 pd
+  lt arctan(600/1200)
+  setcolor 'black
+  rectangle -600 1200
+  rt arctan(600/1200)
+  pu bk 60 pd
+  setcolor 'white
+  fd 30
+  setcolor 'red
+  filled 'red [ rectangle 40 600]
+  pu fd 30 lt arctan(600/1200) rt 90 fd 1200 rt 90 pd
+  pu lt arctan(600/1200) bk 30 pd
+  filled 'red [ rectangle 40 600]
+  pu fd 30 rt arctan(600/1200) fd 600 pd
+  pu rt arctan(600/1200) bk 30 pd
+  filled 'red [ rectangle 40 600]
+  pu fd 30 lt arctan(600/1200) pd
+  pu rt 90 fd 1200 rt 90 pd
+  pu lt arctan(600/1200) bk 30 pd
+  filled 'red [ rectangle 40 600]
+  pu fd 30 rt arctan(600/1200) pd
+  fd 200
+  setcolor 'white
+  filled 'white [ rectangle 200 1200 ]
+  bk 200 rt 90 fd 500 lt 90
+  filled 'white [ rectangle 600 200 ]
+  rt 90 fd 40 lt 90
+  filled 'red [ rectangle 600 120 ]
+  lt 90 fd 540 rt 90 fd 240
+  filled 'red [ rectangle 120 1200 ]
+  fd 360 rt 90 fd 1200
+  filled 'white [ rectangle -1200 -100 ]
+  filled 'white [ rectangle 100 600 ]
+  rt 90 fd 600 rt 90 fd 1200
+  filled 'white [ rectangle -1200 -100 ]
+  filled 'white [ rectangle 100 600 ]
+  rt 90
+  setcolor 'black
+  rectangle 600 1200
+end
