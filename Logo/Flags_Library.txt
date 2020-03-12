@@ -124,7 +124,7 @@ to triangle :side1 :angle :side2
   rt 180 - :angle
 end
 
-to union_jack
+to union_jack :scrunch
   window
   setscrunch :scrunch :scrunch
   pu setxy -600 -300 pd
@@ -161,10 +161,12 @@ to union_jack
   bk 200 rt 90 fd 500 lt 90
   filled 'white [ rectangle 600 200 ]
   rt 90 fd 40 lt 90
+  setcolor 'red
   filled 'red [ rectangle 600 120 ]
   lt 90 fd 540 rt 90 fd 240
   filled 'red [ rectangle 120 1200 ]
   fd 360 rt 90 fd 1200
+  setcolor 'white
   filled 'white [ rectangle -1200 -100 ]
   filled 'white [ rectangle 100 600 ]
   rt 90 fd 600 rt 90 fd 1200
