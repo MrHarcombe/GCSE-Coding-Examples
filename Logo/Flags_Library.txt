@@ -1,4 +1,4 @@
-to american_flag
+to american_flag :scrunch
   window
   setscrunch :scrunch :scrunch
   pu setxy -600 -320 pd
